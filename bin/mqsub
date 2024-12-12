@@ -210,7 +210,7 @@ class script_format:
             qsub_stdout = run("qsub {}".format(outfile.name)).decode()
             logging.info("qsub stdout was: {}".format(qsub_stdout.rstrip()))
             if not args.bg:
-                match_result = re.compile('^(\d+\.pbs)\n$').match(qsub_stdout)
+                match_result = re.compile('^(\d+\.hpc)\n$').match(qsub_stdout)
                 if match_result is None:
                     raise Exception("Unexpected output from qsub: {}".format(qsub_stdout))
                 else:
