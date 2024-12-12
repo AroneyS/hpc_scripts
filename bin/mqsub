@@ -134,7 +134,6 @@ class script_format:
     def header(outfile, prelude=None, segregated_logs_dir=None):
         print('#!/bin/bash -l',file=outfile)
         print('#PBS -l ncpus={}'.format(args.cpus),file=outfile)
-        print('#PBS -l ngpus={}'.format(args.gpu),file=outfile)        
         print('#PBS -l mem={}gb'.format(mem),file=outfile)
         print('#PBS -l walltime={}:00:00'.format(hours),file=outfile)
         if args.bg and not args.no_email and not args.command_file and not (args.chunk_num or args.chunk_size):
